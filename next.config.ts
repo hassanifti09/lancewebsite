@@ -43,6 +43,30 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Ultra-fast video headers
+        source: '/assets/ultra/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+        ],
+      },
+      {
+        // Push critical resources
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: '</assets/ultra/blackhole-ultra.mp4>; rel=preload; as=video, </assets/ultra/herovid-ultra.mp4>; rel=preload; as=video',
+          },
+        ],
+      },
     ];
   },
 };

@@ -78,6 +78,15 @@ const HLSVideo: React.FC<HLSVideoProps> = ({
         startPlayback();
       });
 
+      // Handle video ending for proper looping
+      video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      });
+      
+      // Also ensure loop attribute is set
+      video.loop = true;
+
       hls.on(Hls.Events.ERROR, (event, data) => {
         if (data.fatal) {
           switch (data.type) {

@@ -44,8 +44,20 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://prod.spline.design" />
         <link rel="dns-prefetch" href="https://prod.spline.design" />
-        <link rel="preload" href="/assets/herovid.webm" as="video" type="video/webm" />
+        <link rel="preload" href="/assets/ultra/blackhole-ultra.mp4" as="video" type="video/mp4" />
+        <link rel="prefetch" href="/assets/ultra/herovid-ultra.mp4" as="video" type="video/mp4" />
         <link rel="preload" href="/assets/fallback.png" as="image" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                  navigator.serviceWorker.register('/sw.js');
+                });
+              }
+            `,
+          }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-100`}

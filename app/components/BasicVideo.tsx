@@ -2,10 +2,15 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-// Dynamically import HLSVideo to avoid SSR issues
+// Dynamic imports for different video strategies
+const UltraFastVideo = dynamic(() => import('./UltraFastVideo'), { 
+  ssr: false,
+  loading: () => null
+});
+
 const HLSVideo = dynamic(() => import('./HLSVideo'), { 
   ssr: false,
-  loading: () => <div className="bg-black" />
+  loading: () => null
 });
 
 interface BasicVideoProps {
@@ -21,28 +26,29 @@ const BasicVideo: React.FC<BasicVideoProps> = ({
   className = '', 
   style = {} 
 }) => {
-  // Map to HLS sources
-  let hlsSrc = src;
-  let fallbackSrc = src;
-  
-  if (src.includes('blackhole')) {
-    hlsSrc = '/assets/hls/blackhole/playlist.m3u8';
-    fallbackSrc = '/assets/blackhole.mp4';
-  } else if (src.includes('herovid')) {
-    hlsSrc = '/assets/hls/herovid/playlist.m3u8';
-    fallbackSrc = '/assets/herovid.mp4';
-  } else if (src.includes('particles')) {
-    hlsSrc = '/assets/hls/particles-optimized/playlist.m3u8';
-    fallbackSrc = '/assets/particles-optimized.mp4';
+  // Use HLS for particles since it's large and not priority
+  if (src.includes('particles')) {
+    return (
+      <HLSVideo
+        src="/assets/hls/particles/playlist.m3u8"
+        fallbackSrc="/assets/particles.mp4"
+        poster={poster}
+        className={className}
+        style={style}
+      />
+    );
   }
-
+  
+  // Use UltraFastVideo for hero videos
+  const isPriority = src.includes('blackhole') || src.includes('herovid');
+  
   return (
-    <HLSVideo
-      src={hlsSrc}
-      fallbackSrc={fallbackSrc}
+    <UltraFastVideo
+      src={src}
       poster={poster}
       className={className}
       style={style}
+      priority={isPriority}
     />
   );
 };
