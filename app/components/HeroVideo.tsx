@@ -1,5 +1,12 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import HLSVideo to avoid SSR issues
+const HLSVideo = dynamic(() => import('./HLSVideo'), { 
+  ssr: false,
+  loading: () => <div className="bg-black" />
+});
 
 interface HeroVideoProps {
   src: string;
@@ -14,67 +21,33 @@ const HeroVideo: React.FC<HeroVideoProps> = ({
   className = '', 
   style = {} 
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Force video to play without any controls
-    const initVideo = () => {
-      video.muted = true;
-      video.loop = true;
-      video.playsInline = true;
-      video.autoplay = true;
-      video.controls = false;
-      
-      // Force remove all attributes that might show controls
-      video.removeAttribute('controls');
-      video.setAttribute('muted', '');
-      video.setAttribute('autoplay', '');
-      video.setAttribute('loop', '');
-      video.setAttribute('playsinline', '');
-      
-      // Try to play
-      video.play().catch(() => {
-        // If autoplay fails, we just show the poster
-      });
-    };
-
-    // Initialize immediately
-    initVideo();
-    
-    // Reinitialize on various events
-    video.addEventListener('loadstart', initVideo);
-    video.addEventListener('loadedmetadata', initVideo);
-    
-    return () => {
-      video.removeEventListener('loadstart', initVideo);
-      video.removeEventListener('loadedmetadata', initVideo);
-    };
-  }, []);
+  // Map video sources to HLS streams
+  let hlsSrc = src;
+  let fallbackSrc = src;
+  
+  if (src.includes('blackhole')) {
+    hlsSrc = '/assets/hls/blackhole/playlist.m3u8';
+    fallbackSrc = '/assets/blackhole.mp4';
+  } else if (src.includes('herovid')) {
+    hlsSrc = '/assets/hls/herovid/playlist.m3u8';
+    fallbackSrc = '/assets/herovid.mp4';
+  } else if (src.includes('particles-optimized')) {
+    hlsSrc = '/assets/hls/particles-optimized/playlist.m3u8';
+    fallbackSrc = '/assets/particles-optimized.mp4';
+  } else if (src.includes('particles')) {
+    hlsSrc = '/assets/hls/particles/playlist.m3u8';
+    fallbackSrc = '/assets/particles.mp4';
+  }
 
   return (
-    <div 
-      ref={containerRef}
-      className={`relative ${className}`} 
-      style={style}
-    >
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover"
-        muted
-        loop
-        playsInline
+    <div className={`relative ${className}`} style={style}>
+      <HLSVideo
+        src={hlsSrc}
+        fallbackSrc={fallbackSrc}
         poster={poster}
+        className="absolute inset-0 w-full h-full object-cover"
         style={{ pointerEvents: 'none' }}
-      >
-        <source src={src} type="video/mp4" />
-        {src.endsWith('.m4v') && (
-          <source src={src.replace('.m4v', '.mp4')} type="video/mp4" />
-        )}
-      </video>
+      />
       
       {/* Invisible overlay to block ALL interaction */}
       <div 

@@ -1,4 +1,12 @@
+"use client";
 import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import HLSVideo to avoid SSR issues
+const HLSVideo = dynamic(() => import('./HLSVideo'), { 
+  ssr: false,
+  loading: () => <div className="bg-black" />
+});
 
 interface BasicVideoProps {
   src: string;
@@ -13,27 +21,28 @@ const BasicVideo: React.FC<BasicVideoProps> = ({
   className = '', 
   style = {} 
 }) => {
-  // Determine the correct video source
-  let videoSrc = src;
+  // Map to HLS sources
+  let hlsSrc = src;
+  let fallbackSrc = src;
   
   if (src.includes('blackhole')) {
-    videoSrc = '/assets/blackhole.mp4';
+    hlsSrc = '/assets/hls/blackhole/playlist.m3u8';
+    fallbackSrc = '/assets/blackhole.mp4';
   } else if (src.includes('herovid')) {
-    videoSrc = '/assets/herovid.mp4';
+    hlsSrc = '/assets/hls/herovid/playlist.m3u8';
+    fallbackSrc = '/assets/herovid.mp4';
   } else if (src.includes('particles')) {
-    videoSrc = '/assets/particles-optimized.mp4';
+    hlsSrc = '/assets/hls/particles-optimized/playlist.m3u8';
+    fallbackSrc = '/assets/particles-optimized.mp4';
   }
 
   return (
-    <video
+    <HLSVideo
+      src={hlsSrc}
+      fallbackSrc={fallbackSrc}
+      poster={poster}
       className={className}
       style={style}
-      autoPlay
-      muted
-      loop
-      playsInline
-      poster={poster}
-      src={videoSrc}
     />
   );
 };

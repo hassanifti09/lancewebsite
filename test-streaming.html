@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Streaming Test</title>
+</head>
+<body>
+    <h1>Test Video Streaming</h1>
+    <video id="testVideo" width="640" height="360" controls preload="none">
+        <source src="/assets/herovid.mp4" type="video/mp4">
+    </video>
+    
+    <div id="stats">
+        <p>Buffered: <span id="buffered">0%</span></p>
+        <p>Downloaded: <span id="downloaded">0 MB</span></p>
+        <p>Total Size: <span id="total">Unknown</span></p>
+    </div>
+
+    <script>
+        const video = document.getElementById('testVideo');
+        const bufferedSpan = document.getElementById('buffered');
+        const downloadedSpan = document.getElementById('downloaded');
+        
+        // Monitor buffering
+        video.addEventListener('progress', () => {
+            if (video.buffered.length > 0) {
+                const bufferedEnd = video.buffered.end(video.buffered.length - 1);
+                const duration = video.duration;
+                if (duration > 0) {
+                    bufferedSpan.textContent = ((bufferedEnd / duration) * 100).toFixed(1) + '%';
+                }
+            }
+        });
+
+        // Check network requests in DevTools to see Range requests
+        console.log('Open Network tab to see Range requests!');
+    </script>
+</body>
+</html>

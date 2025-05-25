@@ -1,5 +1,12 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Dynamically import HLSVideo to avoid SSR issues
+const HLSVideo = dynamic(() => import('./HLSVideo'), { 
+  ssr: false,
+  loading: () => <div className="bg-black" />
+});
 
 interface BackgroundVideoProps {
   src: string;
@@ -14,63 +21,32 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   className = '', 
   style = {} 
 }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    // Set video properties programmatically to ensure they work
-    video.muted = true;
-    video.loop = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    
-    // Remove any controls
-    video.controls = false;
-    video.removeAttribute('controls');
-    
-    // Play the video
-    const playVideo = () => {
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {
-          // Silently handle autoplay failure
-        });
-      }
-    };
-
-    // Try to play immediately
-    playVideo();
-    
-    // Also try on these events
-    video.addEventListener('loadedmetadata', playVideo);
-    video.addEventListener('loadeddata', playVideo);
-    video.addEventListener('canplay', playVideo);
-    
-    return () => {
-      video.removeEventListener('loadedmetadata', playVideo);
-      video.removeEventListener('loadeddata', playVideo);
-      video.removeEventListener('canplay', playVideo);
-    };
-  }, []);
+  // Map video sources to HLS streams
+  let hlsSrc = src;
+  let fallbackSrc = src;
+  
+  if (src.includes('blackhole')) {
+    hlsSrc = '/assets/hls/blackhole/playlist.m3u8';
+    fallbackSrc = '/assets/blackhole.mp4';
+  } else if (src.includes('herovid')) {
+    hlsSrc = '/assets/hls/herovid/playlist.m3u8';
+    fallbackSrc = '/assets/herovid.mp4';
+  } else if (src.includes('particles-optimized')) {
+    hlsSrc = '/assets/hls/particles-optimized/playlist.m3u8';
+    fallbackSrc = '/assets/particles-optimized.mp4';
+  } else if (src.includes('particles')) {
+    hlsSrc = '/assets/hls/particles/playlist.m3u8';
+    fallbackSrc = '/assets/particles.mp4';
+  }
 
   return (
-    <video
-      ref={videoRef}
+    <HLSVideo
+      src={hlsSrc}
+      fallbackSrc={fallbackSrc}
+      poster={poster}
       className={className}
       style={style}
-      muted
-      loop
-      playsInline
-      poster={poster}
-      // Intentionally no autoPlay, controls attributes here - we set them via JS
-    >
-      <source src={src} type="video/mp4" />
-      {src.endsWith('.m4v') && (
-        <source src={src.replace('.m4v', '.mp4')} type="video/mp4" />
-      )}
-    </video>
+    />
   );
 };
 

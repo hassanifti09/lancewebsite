@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
-  // Headers for better caching
+  // Headers for better caching and video streaming
   async headers() {
     return [
       {
@@ -30,8 +30,13 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: '/:path*.m4v',
+        // Enable range requests for video streaming
+        source: '/:path*.(mp4|webm|m4v)',
         headers: [
+          {
+            key: 'Accept-Ranges',
+            value: 'bytes',
+          },
           {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
