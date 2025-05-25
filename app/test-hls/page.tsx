@@ -24,7 +24,7 @@ export default function TestHLS() {
         <div>
           <h2 className="text-xl mb-2">BasicVideo Component (auto-converted to HLS)</h2>
           <BasicVideo
-            src="/assets/blackhole.mp4"
+            src="/assets/blackhole.m4v"
             className="w-full max-w-2xl"
             poster="/assets/fallback.png"
           />

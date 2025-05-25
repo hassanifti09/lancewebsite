@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Service from './ServicesSection';
 import { motion, useScroll } from 'framer-motion';
 import { useTransform } from 'framer-motion';
+import { cdn } from '@/lib/cdn';
 
 // --- Project Data ---
 // Using the project data structure you provided
@@ -12,7 +13,7 @@ const projects = [
     title: 'Predictamaint',
     description:
       "Our Client OSDCORB Tyres, a leading tyre manufacturer, faced frequent unplanned equipment downtime...",
-    imageUrl: '/assets/grad1.jpg',
+    imageUrl: cdn('grad1.jpg'),
     technologies: [{ text: 'React', variant: 'white' },
       { text: 'Next.js', variant: 'black' },
       { text: 'TypeScript', variant: 'white' },
@@ -27,7 +28,7 @@ const projects = [
     title: 'SmartLogix',
     description:
       'A logistics optimization system using route prediction, fleet management, and live tracking analytics.',
-    imageUrl: '/assets/grad1.jpg',
+    imageUrl: cdn('grad1.jpg'),
     technologies: [{ text: 'React', variant: 'white' },
       { text: 'Next.js', variant: 'black' },
       { text: 'TypeScript', variant: 'white' },
@@ -42,7 +43,7 @@ const projects = [
     title: 'InsightPulse',
     description:
       'We helped a healthcare startup analyze large-scale medical data to drive predictive diagnostics.',
-    imageUrl: '/assets/grad1.jpg',
+    imageUrl: cdn('grad1.jpg'),
     technologies: [{ text: 'React', variant: 'white' },
       { text: 'Next.js', variant: 'black' },
       { text: 'TypeScript', variant: 'white' },

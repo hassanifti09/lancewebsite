@@ -6,15 +6,16 @@ import NiceModal, { useModal } from '@ebay/nice-modal-react'; // Added for Modal
 import Header from '../components/Header';
 import Button from '../components/Button'; // Keep import for OTHER buttons
 import BasicVideo from '../components/BasicVideo';
+import { cdn } from '@/lib/cdn';
 
 // --- RECREATED Services Data ---
 const services = [
-  { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: '/assets/cloud-consulting.webp' },
-  { title: 'Software Development', path: '/services/enterprise-software-development', image: '/assets/software-development.webp' },
-  { title: 'Web Development', path: '/services/web-development', image: '/assets/web-development.jpeg' },
-  { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: '/assets/artificial-intelligence.jpg' },
-  { title: 'Mobile Development', path: '/services/mobile-development', image: '/assets/mobile-development.jpeg' },
-  { title: 'ERP Consulting', path: '/services/erp-consulting', image: '/assets/erp-consulting.jpg' },
+  { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: cdn('cloud-consulting.webp') },
+  { title: 'Software Development', path: '/services/enterprise-software-development', image: cdn('software-development.webp') },
+  { title: 'Web Development', path: '/services/web-development', image: cdn('web-development.jpeg') },
+  { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: cdn('artificial-intelligence.jpg') },
+  { title: 'Mobile Development', path: '/services/mobile-development', image: cdn('mobile-development.jpeg') },
+  { title: 'ERP Consulting', path: '/services/erp-consulting', image: cdn('erp-consulting.jpg') },
 ];
 
 // --- RECREATED ServicesModal Component ---
@@ -130,8 +131,8 @@ const Hero = () => {
     <div className="relative m-3 md:m-5 rounded-2xl overflow-hidden h-fit md:h-[95vh]"> {/* Original */}
       <div className="absolute inset-0 z-0 overflow-hidden"> {/* Original */}
         <BasicVideo
-          src="/assets/herovid.webm"
-          poster="/assets/fallback.png"
+          src={cdn('herovid.mp4')}
+          poster={cdn('fallback.png')}
           className="w-full h-full object-cover transform-gpu"
         />
       </div>

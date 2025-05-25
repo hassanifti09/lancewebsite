@@ -4,9 +4,9 @@ export default function VideoTest() {
       <h1 className="text-2xl font-bold">Video Test Page</h1>
       
       <div>
-        <h2 className="text-xl mb-2">Test 1: Basic HTML video - blackhole.mp4</h2>
+        <h2 className="text-xl mb-2">Test 1: Basic HTML video - blackhole.m4v</h2>
         <video 
-          src="/assets/blackhole.mp4"
+          src="/assets/blackhole.m4v"
           autoPlay
           muted
           loop
@@ -28,9 +28,9 @@ export default function VideoTest() {
       </div>
 
       <div>
-        <h2 className="text-xl mb-2">Test 3: No autoplay - blackhole.mp4</h2>
+        <h2 className="text-xl mb-2">Test 3: No autoplay - blackhole.m4v</h2>
         <video 
-          src="/assets/blackhole.mp4"
+          src="/assets/blackhole.m4v"
           muted
           loop
           controls

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { cdn } from '@/lib/cdn';
 
 const WhyChooseUs = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -28,13 +29,13 @@ const WhyChooseUs = () => {
           <div className="px-10">
             <motion.div
               className="absolute top-0 left-0 w-24 h-24 rounded-xl bg-cover bg-center"
-              style={{ backgroundImage: "url('/assets/why2.jpg')" }}
+              style={{ backgroundImage: `url('${cdn('why2.jpg')}')` }}
               animate={{ top: isAnimating ? `${containerHeight - 96}px` : "0px" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
             <motion.div
               className="absolute bottom-0 right-10 w-24 h-24 rounded-xl bg-cover bg-center"
-              style={{ backgroundImage: "url('/assets/motorbike.jpg')" }}
+              style={{ backgroundImage: `url('${cdn('motorbike.jpg')}')` }}
               animate={{ bottom: isAnimating ? `${containerHeight - 96}px` : "0px" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             />
@@ -51,13 +52,13 @@ const WhyChooseUs = () => {
         <div className="w-full md:w-1/6 gap-24 flex flex-col justify-between relative md:h-[300px]">
           <motion.div
             className="absolute top-0 right-0 w-24 h-24 rounded-xl bg-cover bg-center hidden md:block"
-            style={{ backgroundImage: "url('/assets/traffic.jpg')" }}
+            style={{ backgroundImage: `url('${cdn('traffic.jpg')}')` }}
             animate={{ top: isAnimating ? `${containerHeight - 96}px` : "0px" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           />
           <motion.div
             className="absolute bottom-0 left-10 w-24 h-24 rounded-xl bg-cover bg-center hidden md:block"
-            style={{ backgroundImage: "url('/assets/people.jpg')" }}
+            style={{ backgroundImage: `url('${cdn('people.jpg')}')` }}
             animate={{ bottom: isAnimating ? `${containerHeight - 96}px` : "0px" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           />

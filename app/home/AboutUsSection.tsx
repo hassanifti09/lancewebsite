@@ -2,23 +2,24 @@
 import React, { useRef } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'framer-motion'
+import { cdn } from '@/lib/cdn'
 
 // Card data array
 const cardData = [
   {
     title: "Our Methodology",
     description: "We follow a proven, collaborative process—combining research, strategy, and agile execution to deliver exceptional results for every client.",
-    backgroundImage: "/assets/archway.jpg"
+    backgroundImage: cdn('archway.jpg')
   },
   {
     title: "Our Expertise",
     description: "With deep technical knowledge across multiple domains, we bring specialized skills and industry insights to every project we undertake.",
-    backgroundImage: "/assets/expertise.jpg"
+    backgroundImage: cdn('expertise.jpg')
   },
   {
     title: "Our Values",
     description: "We're guided by integrity, innovation, and a relentless commitment to excellence in everything we do for our clients and partners.",
-    backgroundImage: "/assets/values.jpg"
+    backgroundImage: cdn('values.jpg')
   }
 ];
 

@@ -1,14 +1,15 @@
 import React from 'react'
 import DarkHeader from '@/app/components/DarkHeader'
 import BasicVideo from '@/app/components/BasicVideo'
+import { cdn } from '@/lib/cdn'
 
 const Hero = () => {
   return (
     <div className="relative m-5 rounded-2xl overflow-hidden h-[55vh] md:h-[75vh]">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <BasicVideo
-          src="/assets/blackhole.m4v"
-          poster="/assets/fallback.png"
+          src={cdn('blackhole.m4v')}
+          poster={cdn('fallback.png')}
           className="object-cover w-full h-full"
           style={{ transform: 'scale(1.35)' }}
         />

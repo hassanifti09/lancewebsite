@@ -27,7 +27,7 @@ const BackgroundVideo: React.FC<BackgroundVideoProps> = ({
   
   if (src.includes('blackhole')) {
     hlsSrc = '/assets/hls/blackhole/playlist.m3u8';
-    fallbackSrc = '/assets/blackhole.mp4';
+    fallbackSrc = '/assets/blackhole.m4v';
   } else if (src.includes('herovid')) {
     hlsSrc = '/assets/hls/herovid/playlist.m3u8';
     fallbackSrc = '/assets/herovid.mp4';

@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { cdn } from '@/lib/cdn'
 
 const OurTeam = () => {
   return (
@@ -16,7 +17,7 @@ const OurTeam = () => {
         <div className="w-full md:w-1/4  rounded-2xl overflow-hidden gap-3 flex flex-col">
           <div className="relative w-full aspect-square">
             <Image 
-              src="/assets/ali.jpeg" 
+              src={cdn('ali.jpeg')} 
               alt="Ali Cheema" 
               fill
               style={{ objectFit: 'cover' }}
@@ -31,7 +32,7 @@ const OurTeam = () => {
         <div className="w-full md:w-1/4  rounded-2xl overflow-hidden gap-3 flex flex-col">
           <div className="relative w-full aspect-square">
             <Image 
-              src="/assets/hassaniftikhar.png" 
+              src={cdn('hassaniftikhar.png')} 
               alt="Hassan Iftikhar" 
               fill
               style={{ objectFit: 'cover' }}
@@ -46,7 +47,7 @@ const OurTeam = () => {
         <div className="w-full md:w-1/4  rounded-2xl overflow-hidden gap-3 flex flex-col">
           <div className="relative w-full aspect-square">
             <Image 
-              src="/assets/ahmed.png" 
+              src={cdn('ahmed.png')} 
               alt="Ahmed Furqan" 
               fill
               style={{ objectFit: 'cover' }}
@@ -61,7 +62,7 @@ const OurTeam = () => {
         <div className="w-full md:w-1/4  rounded-2xl overflow-hidden gap-3 flex flex-col">
           <div className="relative w-full aspect-square">
             <Image 
-              src="/assets/yao.png" 
+              src={cdn('yao.png')} 
               alt="Yao Yu" 
               fill
               style={{ objectFit: 'cover' }}

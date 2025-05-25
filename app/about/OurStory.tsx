@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { cdn } from '@/lib/cdn'
 
 const OurStory = () => {
   return (
@@ -15,7 +16,7 @@ const OurStory = () => {
       At Lance Systems, we are not just building digital products; we are building possibilities. Our journey is fueled by curiosity, shaped by experience, and driven by a simple belief — technology should be a bridge to progress, not a barrier. We continue to empower businesses to scale smarter, operate faster, and achieve more — and we’re just getting started.
       </h5>
         </div>
-        <div className="rounded-2xl w-full md:w-1/2 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/grad1.jpg')" }}>
+        <div className="rounded-2xl w-full md:w-1/2 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${cdn('grad1.jpg')}')` }}>
         </div>
     </div>
     </div>

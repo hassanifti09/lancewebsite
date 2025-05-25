@@ -1,17 +1,6 @@
 "use client";
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-// Dynamic imports for different video strategies
-const UltraFastVideo = dynamic(() => import('./UltraFastVideo'), { 
-  ssr: false,
-  loading: () => null
-});
-
-const HLSVideo = dynamic(() => import('./HLSVideo'), { 
-  ssr: false,
-  loading: () => null
-});
+import { cdn } from '@/lib/cdn';
 
 interface BasicVideoProps {
   src: string;
@@ -26,29 +15,20 @@ const BasicVideo: React.FC<BasicVideoProps> = ({
   className = '', 
   style = {} 
 }) => {
-  // Use HLS for particles since it's large and not priority
-  if (src.includes('particles')) {
-    return (
-      <HLSVideo
-        src="/assets/hls/particles/playlist.m3u8"
-        fallbackSrc="/assets/particles.mp4"
-        poster={poster}
-        className={className}
-        style={style}
-      />
-    );
-  }
-  
-  // Use UltraFastVideo for hero videos
-  const isPriority = src.includes('blackhole') || src.includes('herovid');
-  
+  // Convert local paths to CDN URLs
+  const videoSrc = src.startsWith('/assets/') ? cdn(src.replace('/assets/', '')) : src;
+  const posterSrc = poster && poster.startsWith('/assets/') ? cdn(poster.replace('/assets/', '')) : poster;
+
   return (
-    <UltraFastVideo
-      src={src}
-      poster={poster}
+    <video
+      src={videoSrc}
+      poster={posterSrc}
+      autoPlay
+      loop
+      muted
+      playsInline
       className={className}
       style={style}
-      priority={isPriority}
     />
   );
 };

@@ -6,18 +6,19 @@ import { Menu, X } from 'lucide-react'
 import Link from 'next/link';
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
 import { createPortal } from "react-dom"
+import { cdn } from '@/lib/cdn'
 
 // Services Modal Component
 const ServicesModal = NiceModal.create(() => {
   const modal = useModal();
   // Services data
   const services = [
-    { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: '/assets/cloud-consulting.webp' },
-    { title: 'Software Development', path: '/services/enterprise-software-development', image: '/assets/software-development.webp' },
-    { title: 'Web Development', path: '/services/web-development', image: '/assets/web-development.jpeg' },
-    { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: '/assets/artificial-intelligence.jpg' },
-    { title: 'Mobile Development', path: '/services/mobile-development', image: '/assets/mobile-development.jpeg' },
-    { title: 'ERP Consulting', path: '/services/erp-consulting', image: '/assets/erp-consulting.jpg' },
+    { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: cdn('cloud-consulting.webp') },
+    { title: 'Software Development', path: '/services/enterprise-software-development', image: cdn('software-development.webp') },
+    { title: 'Web Development', path: '/services/web-development', image: cdn('web-development.jpeg') },
+    { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: cdn('artificial-intelligence.jpg') },
+    { title: 'Mobile Development', path: '/services/mobile-development', image: cdn('mobile-development.jpeg') },
+    { title: 'ERP Consulting', path: '/services/erp-consulting', image: cdn('erp-consulting.jpg') },
   ];
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
@@ -111,7 +112,7 @@ const DarkHeader = () => {
       {/* Desktop Header */}
       <div className="hidden md:flex flex-row items-center justify-between px-2">
         <div className="w-[20%]">
-          <Image src="/assets/lance-white-fav.svg" alt="logo" width={320} height={320} />
+          <Image src={cdn('lance-white-fav.svg')} alt="logo" width={320} height={320} />
         </div>
         <div className="w-[60%] flex items-center justify-center">
           <div className="w-min flex flex-row justify-between items-center gap-12 font-light text-lg rounded-full bg-white/95 backdrop-blur-sm  text-black px-8 py-3">
@@ -142,7 +143,7 @@ const DarkHeader = () => {
 
       {/* Mobile Header */}
       <div className="md:hidden rounded-full flex flex-row justify-between items-center px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30">
-        <Image src="/assets/lance-white-fav.svg" alt="logo" width={120} height={120} />
+        <Image src={cdn('lance-white-fav.svg')} alt="logo" width={120} height={120} />
         <button onClick={toggleMenu} className="text-white">
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

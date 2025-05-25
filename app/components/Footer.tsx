@@ -4,15 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator'; // Assuming this path is correct
 import NiceModal, { useModal } from '@ebay/nice-modal-react';
+import { cdn } from '@/lib/cdn';
 
 // --- Services Data (kept outside as good practice) ---
 const services = [
-  { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: '/assets/cloud-consulting.webp' },
-  { title: 'Software Development', path: '/services/enterprise-software-development', image: '/assets/software-development.webp' },
-  { title: 'Web Development', path: '/services/web-development', image: '/assets/web-development.jpeg' },
-  { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: '/assets/artificial-intelligence.jpg' },
-  { title: 'Mobile Development', path: '/services/mobile-development', image: '/assets/mobile-development.jpeg' },
-  { title: 'ERP Consulting', path: '/services/erp-consulting', image: '/assets/erp-consulting.jpg' },
+  { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: cdn('cloud-consulting.webp') },
+  { title: 'Software Development', path: '/services/enterprise-software-development', image: cdn('software-development.webp') },
+  { title: 'Web Development', path: '/services/web-development', image: cdn('web-development.jpeg') },
+  { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: cdn('artificial-intelligence.jpg') },
+  { title: 'Mobile Development', path: '/services/mobile-development', image: cdn('mobile-development.jpeg') },
+  { title: 'ERP Consulting', path: '/services/erp-consulting', image: cdn('erp-consulting.jpg') },
 ];
 
 // --- ServicesModal Component - Fixed scroll lock, button position, preserved original styles/layout ---
@@ -135,7 +136,7 @@ const Footer = () => {
 
   return (
     // Preserving ALL original Footer class names and structure
-    <footer className="w-full pt-10 pb-5 px-10 font-light tracking-tight leading-tight">
+    <footer className="w-full pt-10 pb-5 px-5 xl:px-10 font-light tracking-tight leading-tight">
       <div className="mx-auto">
         <div className="flex flex-col md:flex-row justify-between mb-30"> {/* Original mb-30 */}
           <div className="flex flex-col gap-5 md:w-[40%]"> {/* Original gap/width */}
@@ -195,7 +196,7 @@ const Footer = () => {
         {/* Original Logo */}
         <div className="mt-10">
           <Image
-            src="/assets/lcfooterlogo.svg"
+            src={cdn('lcfooterlogo.svg')}
             alt="Lance Footer Logo" // Original alt
             width={300} // Original width
             height={100} // Original height
