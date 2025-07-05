@@ -13,7 +13,7 @@ const OurStory = () => {
       <br></br><br></br>
       As our expertise deepened and our horizons expanded, we set our sights on new frontiers. Today, our operational footprint extends robustly across key international hubs such as the United Kingdom, Canada, Australia, United Arab Emirates, and most recently, the United States of America.
       <br></br><br></br>
-      Our core philosophy, and the reason why such a diverse cohort of clients trusts us, is within our ability to innovate and introduce operational efficiency in ways others simply cannot. We engineer clarity out of complexity, reimagining systems and experiences with the precision of technologists and the vision of artists. Simply put, when unbridled technological prowess meets the modern business, it creates an unstoppable and scalable momentum that redefines what's possible. At Lance we are building possibilities fueled by curiosity, responsibility and bridging barriers. 
+      Our core philosophy, and the reason why such a diverse cohort of clients trusts us, is within our ability to innovate and introduce operational efficiency in ways others simply cannot. We engineer clarity out of complexity, reimagining systems and experiences with the precision of technologists and the vision of artists. Simply put, when unbridled technological prowess meets the modern business, it creates an unstoppable and scalable momentum that redefines what&apos;s possible. At Lance we are building possibilities fueled by curiosity, responsibility and bridging barriers. 
       </h5>
         </div>
         <div className="rounded-2xl w-full md:w-1/2 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${cdn('grad1.jpg')}')` }}>

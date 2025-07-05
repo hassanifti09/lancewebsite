@@ -65,7 +65,6 @@ const OurProjects = () => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
-    enabled: isDesktop, // Disable on mobile
   });
 
   const scaleTransforms = projects.map((_, index) => {

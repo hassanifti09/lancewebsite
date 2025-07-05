@@ -5,7 +5,6 @@ import React from 'react';
 import { Palette, Code2, Rocket, Zap } from 'lucide-react'; 
 // Updated Fa icons for Web Development principles
 import { FaPaintBrush, FaLaptopCode, FaSyncAlt } from 'react-icons/fa'; // FaSyncAlt for evolving/future-proof
-import SplashCursor from '@/app/components/SplashCursor';
 import { SplineBackground } from '@/app/components/SplineBackground';
 import { OrbitingCirclesDemo } from './Animation';
 
@@ -92,7 +91,6 @@ const Body = () => {
         </p> */}
     </div>
 </div>
-    <SplashCursor>
     <div className="flex flex-col font-light py-5 pb-10 px-10 tracking-tight leading-tight text-black/85 gap-16">
         <div className="flex flex-col lg:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 lg:pt-0 lg:text-xl flex-shrink-0 text-center lg:text-left">The Principles Behind Every Beautiful<br></br> & Functional Website</h2>
@@ -150,7 +148,6 @@ const Body = () => {
       </div>
         
       </div>
-    </SplashCursor>
     </div>
   )
 }

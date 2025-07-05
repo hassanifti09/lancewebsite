@@ -34,7 +34,7 @@ const Body = () => {
           
           <Compass className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Architect</h3>
-          <p className="group-hover:text-white/90">We design the system inside and out, from database structure and APIs to user flows and interface wireframes, always ensuring it's robust, scalable, and ready for real-world usage.</p>
+          <p className="group-hover:text-white/90">We design the system inside and out, from database structure and APIs to user flows and interface wireframes, always ensuring it&apos;s robust, scalable, and ready for real-world usage.</p>
         </div>
       </div>
 
@@ -139,7 +139,7 @@ It all starts with understanding your goals, your users, and how your business r
         <div className="flex flex-col lg:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 lg:pt-0 lg:text-xl flex-shrink-0 text-center lg:text-left">The Principles Behind Every Line of Code</h2>
         <h5 className="text-3xl text-center lg:text-justify lg:text-4xl w-full lg:w-[65%] leading-tight lg:leading-[1.1] ">
-        Great software isn&apos;t just built, it's engineered with care, and purpose. We follow principles that prioritize performance, maintainability, and long-term impact, ensuring every product we deliver stands the test of scale and time.
+        Great software isn&apos;t just built, it&apos;s engineered with care, and purpose. We follow principles that prioritize performance, maintainability, and long-term impact, ensuring every product we deliver stands the test of scale and time.
         </h5>
       </div>
       <div className="flex flex-col lg:flex-row gap-10 items-stretch justify-center">

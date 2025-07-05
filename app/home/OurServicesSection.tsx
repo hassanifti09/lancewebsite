@@ -56,7 +56,6 @@ const OurServices = () => {
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
-    enabled: isDesktop, // Disable on mobile
   });
 
   const scaleTransforms = services.map((_, index) => {
@@ -80,7 +79,7 @@ const OurServices = () => {
       <div className="flex flex-col md:flex-row justify-between gap-6 ">
         <h2 className="text-lg mt-10 mb-5 md:mt-0 md:mb-0 text-center md:text-left md:text-xl flex-shrink-0">Our Services</h2>
         <h5 className="text-3xl p-2 md:p-0 text-center md:text-justify md:text-4xl w-full md:w-[65%] leading-tight md:leading-[1.1] ">
-        Let's cut to the chase. We do a select few things, and we do them exceptionally well: creating impactful AI solutions, developing custom software, and providing expert cloud engineering, all designed to solve your toughest challenges and drive significant growth.
+        Let&apos;s cut to the chase. We do a select few things, and we do them exceptionally well: creating impactful AI solutions, developing custom software, and providing expert cloud engineering, all designed to solve your toughest challenges and drive significant growth.
         </h5>
       </div>
 
