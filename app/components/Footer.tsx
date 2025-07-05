@@ -163,8 +163,14 @@ const Footer = () => {
               <Link href="/#projects">
                 <h5 className="hover:text-stone-600">Projects</h5>
               </Link>
-              <Link href="/about#methodology">
-                <h5 className="hover:text-stone-600">Methodology</h5>
+              <Link href="/softreach">
+                <h5 className="hover:text-stone-600">SoftReach</h5>
+              </Link>
+              <Link href="/flemingai">
+                <h5 className="hover:text-stone-600">Fleming AI</h5>
+              </Link>
+              <Link href="/evo">
+                <h5 className="hover:text-stone-600">EVO</h5>
               </Link>
               <Link href="/contact">
                 <h5 className="hover:text-stone-600">Contact</h5>
@@ -211,14 +217,12 @@ const Footer = () => {
         {/* Original Bottom bar structure and styling */}
         <div className="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-stone-600">
           <div className="flex gap-3 md:gap-0 md:space-x-6">
-            <span>© LANCE.SYSTEMS</span>
-            <Link href="/privacy" className="hover:text-stone-900">PRIVACY POLICY</Link>
-            <Link href="/terms" className="hover:text-stone-900">TERMS & CONDITIONS</Link>
+            <span>© LANCESYSTEMS</span>
+            
           </div>
           <div className="flex gap-3 md:gap-0 md:space-x-6">
-            <Link href="https://www.instagram.com//" className="hover:text-stone-900">INSTAGRAM</Link>
-            <Link href="https://linkedin.com" className="hover:text-stone-900">LINKEDIN</Link>
-            <Link href="https://twitter.com" className="hover:text-stone-900">X(TWITTER)</Link>
+            <Link href="/privacy" className="hover:text-stone-900">PRIVACY POLICY</Link>
+            <Link href="/terms" className="hover:text-stone-900">TERMS & CONDITIONS</Link>
           </div>
         </div>
       </div>

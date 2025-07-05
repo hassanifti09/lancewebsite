@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Button from '../components/Button'; // Added import
 import toast from 'react-hot-toast';
