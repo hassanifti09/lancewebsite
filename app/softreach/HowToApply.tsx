@@ -1,8 +1,21 @@
 'use client';
 import React from 'react';
 import Button from '../components/Button';
+import NiceModal from '@ebay/nice-modal-react';
+import SoftReachApplicationModal from './SoftReachApplicationModal';
+import { useEffect } from 'react';
 
 const HowToApply = () => {
+  const softReachModalId = 'soft-reach-application-modal';
+
+  useEffect(() => {
+    NiceModal.register(softReachModalId, SoftReachApplicationModal);
+  }, []);
+
+  const showSoftReachModal = () => {
+    NiceModal.show(softReachModalId);
+  };
+
   return (
     <div className="pb-5 px-5">
       <div className="flex flex-col rounded-2xl bg-stone-950 pb-24 w-full p-5 font-light tracking-tight leading-tight text-white/95">
@@ -24,7 +37,7 @@ const HowToApply = () => {
             </p>
           </div>
           <div className="mt-8">
-            <Button variant="white" route="/contact" text="Apply Now" />
+            <Button variant="white" onClick={showSoftReachModal} text="Apply Now" />
           </div>
         </div>
       </div>
