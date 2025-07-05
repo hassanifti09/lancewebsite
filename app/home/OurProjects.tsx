@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Service from './ServicesSection';
 import { motion, useScroll } from 'framer-motion';
 import { useTransform } from 'framer-motion';
+import { useIsDesktop } from '@/lib/useIsDesktop';
 import { cdn } from '@/lib/cdn';
 
 // --- Project Data ---
@@ -59,17 +60,19 @@ const projects = [
 
 const OurProjects = () => {
   const containerRef = useRef(null);
-  
+  const isDesktop = useIsDesktop();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
+    enabled: isDesktop, // Disable on mobile
   });
 
-  // Define useTransform calls individually at the top level for each project
   const scaleTransforms = projects.map((_, index) => {
     const sectionHeight = 1 / projects.length;
     const sectionStart = index * sectionHeight;
     const sectionEnd = sectionStart + sectionHeight;
+
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useTransform(
       scrollYProgress,
@@ -84,7 +87,7 @@ const OurProjects = () => {
       <div className="w-full font-light tracking-tight leading-tight bg-white flex flex-col gap-5 md:p-5 text-black/85">
       {/* HEADING */}
       <div className="flex flex-col md:flex-row justify-between gap-6 ">
-        <h2 className="text-lg pt-8 md:pt-0 md:text-xl flex-shrink-0 text-center md:text-left">Our Projects</h2>
+        <h2 className="text-lg pt-8 md:pt-0 md:text-xl flex-shrink-0 text-center md:text-left">Our Flagship Projects</h2>
         <h5 className="text-3xl text-center md:text-justify md:text-4xl w-full md:w-[65%] leading-tight md:leading-[1.1] ">
         Our portfolio reflects our commitment to innovation and impact. Each project we undertake is driven by a deep understanding of our clients&apos; goals and a dedication to delivering measurable results.
         </h5>
@@ -102,14 +105,13 @@ const OurProjects = () => {
           //const sectionStart = index * sectionHeight;
           // Access the pre-calculated scale transform for this index
           const scale = scaleTransforms[index];
-          
+
           return (
             <motion.div
               key={index}
-              className="sticky top-0 w-full origin-center "
+              className={isDesktop ? "sticky top-0 w-full origin-center" : "w-full origin-center"}
               style={{
-                scale,
-                // Reverse the z-index order so later items stack on top
+                scale: isDesktop ? scale : 1,
                 zIndex: index,
               }}
             >

@@ -6,6 +6,7 @@ import NiceModal, { useModal } from '@ebay/nice-modal-react'; // Added for Modal
 import Header from '../components/Header';
 import Button from '../components/Button'; // Keep import for OTHER buttons
 import BasicVideo from '../components/BasicVideo';
+import Noise from '../components/Noise';
 import { cdn } from '@/lib/cdn';
 
 // --- RECREATED Services Data ---
@@ -135,16 +136,27 @@ const Hero = () => {
           poster={cdn('fallback.png')}
           className="w-full h-full object-cover transform-gpu"
         />
+        <Noise 
+         patternSize={250}
+
+    patternScaleX={1}
+
+    patternScaleY={1}
+
+    patternRefreshInterval={2}
+
+    patternAlpha={15}
+        />
       </div>
-      <div className="relative h-full z-10 flex flex-col justify-between p-3 md:p-5"> {/* Original */}
+      <div className="relative h-full z-20 flex flex-col justify-between p-3 md:p-5"> {/* Original */}
         <Header /> {/* Original */}
         <div className="flex flex-col lg:flex-row justify-between pt-10 lg:pt-0 lg:mb-10"> {/* Original */}
           <div className="lg:w-[50%] px-5 lg:px-10 flex flex-col justify-end gap-8"> {/* Original */}
             <h1 className="text-4xl lg:text-7xl text-white font-light tracking-tight leading-tighter"> {/* Original */}
-              Transforming tech solutions for a new digital age
+             An innovative new world, a brave new world
             </h1>
             <p className="text-white/80 text-lg lg:text-xl font-light lg:mt-2"> {/* Original */}
-              Unlock the power of modern technology: efficient, streamlined, and built for a digital-first world.
+              Unlock the limitless power of modern technology with us, custom built for your needs
             </p>
             <div className="flex flex-row gap-3 mb-7 lg:mb-0"> {/* Original */}
               {/* Standard HTML button with ALL classes from Button variant="white" */}
@@ -166,7 +178,7 @@ const Hero = () => {
             </h2>
 
             <p className="text-stone-500 text-sm lg:text-md font-light">
-              Get your personalized estimate in just a few clicks — it&apos;s fast, easy, and completely free
+              Get your personalized estimate in just a few clicks, it&apos;s fast, easy, and completely free
             </p>
             <form className="flex flex-col gap-2 lg:gap-4">
               <input

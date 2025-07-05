@@ -20,7 +20,7 @@ export default function AccordionNew({ question, answer }: AccordionProps) {
   }, [open]);
 
   return (
-    <div className="bg-stone-950 border-[1px] border-stone-800 my-3 rounded-2xl shadow-[inset_-1px_-1px_0px_rgba(255,255,255,0.1),_inset_1px_1px_0px_rgba(0,0,0,0.5)] p-4 transition-all duration-300">
+    <div className="bg-stone-950 border-[1px] border-stone-800 my-3 rounded-2xl p-4 transition-all duration-300">
       <button
         onClick={() => setOpen(!open)}
         className="flex justify-between items-center w-full text-left"

@@ -44,9 +44,7 @@ const WhyChooseUs = () => {
         <div className="w-full md:w-4/6 flex flex-col gap-10">
           <h5 className="text-lg md:text-xl text-black/60">How We Make A Difference</h5>
           <h2 className="text-3xl md:text-5xl text-black/85">
-            We&apos;re not just a tech company — We build{" "}
-            <b>scalable, smart, and stunning</b> digital solutions that drive{" "}
-            <b>real business growth</b>
+            We&apos;re not just a tech company, we empower our customers, building <b>smart, scalable and stunning digital solutions</b> that drive growth
           </h2>
         </div>
         <div className="w-full md:w-1/6 gap-24 flex flex-col justify-between relative md:h-[300px]">
@@ -75,9 +73,7 @@ const WhyChooseUs = () => {
           </h4>
           </div>
           <p className="text-sm group-hover:text-white leading-tight text-black/65 text-justify">
-            We don&apos;t believe in one-size-fits-all. Every project we take on
-            is custom-built to meet your exact needs — scalable, secure, and
-            future-proof from day one.
+            Off the shelf solutions aren&apos;t in our code. We engineer every project specifically for your needs, ensuring it&apos;s scalable, secure, and future ready from its initial build
           </p>
         </div>
         <div 
@@ -88,7 +84,7 @@ const WhyChooseUs = () => {
             Speed Oriented
           </h4>
           <p className="text-sm group-hover:text-white leading-tight text-black/65 text-justify">
-            Time is money — and we don&apos;t waste either. Our agile delivery model ensures you get your MVP or full-scale product to market fast, without ever sacrificing quality.
+            Time and investment are vital. Meeting your deadlines is our priority. Our agile model, with your dedicated software consultant guiding progress, gets your quality MVP or full product to market quickly.
           </p>
         </div>
         <div 
@@ -96,10 +92,10 @@ const WhyChooseUs = () => {
           onMouseEnter={() => handleMouseEnter(2)}
         >
           <h4 className="text-lg md:text-xl text-left font-medium text-black/85 group-hover:text-white">
-            Elite Engineering Talent
+            Seasoned Global Engineering
           </h4>
           <p className="text-sm group-hover:text-white leading-tight text-black/65 text-justify">
-            Our developers are not just coders — they&apos;re problem-solvers and innovators, committed to delivering nothing short of world-class software.
+            Our engineers are more than coders, they are seasoned innovators and visionaries. With proven experience from hundreds of projects delivered to world-class institutions and global companies, they are dedicated to building exceptional software.
           </p>
         </div>
         <div 

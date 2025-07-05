@@ -8,7 +8,7 @@ import { cdn } from '@/lib/cdn'
 const cardData = [
   {
     title: "Our Methodology",
-    description: "We follow a proven, collaborative process—combining research, strategy, and agile execution to deliver exceptional results for every client.",
+    description: "We follow a proven collaborative process. Our unique process involves a series of steps and phases designed for transparency, shared understanding, and achieving your specific vision effectively.",
     backgroundImage: cdn('archway.jpg')
   },
   {
@@ -18,7 +18,7 @@ const cardData = [
   },
   {
     title: "Our Values",
-    description: "We're guided by integrity, innovation, and a relentless commitment to excellence in everything we do for our clients and partners.",
+    description: "We're guided by integrity, innovation, and a relentless commitment to excellence in everything we do for our clients and partners. Moral ethics form the cornerstone of all our actions.",
     backgroundImage: cdn('values.jpg')
   }
 ];

@@ -2,22 +2,11 @@
 import React, { useRef } from 'react';
 import Service from './ServicesSection'; // Assuming ServicesSection is the correct component name
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useIsDesktop } from '@/lib/useIsDesktop';
 import { cdn } from '@/lib/cdn';
 
 // --- Project Data ---
 const services = [
-  {
-    title: "Software Development",
-    image: cdn('software-development.webp'),
-    description: "We design and develop software tailored to your unique goals, workflows, and users. Whether it's a new product, a custom internal system, or modernizing outdated tools, our team builds scalable, high-performance solutions that drive real business value. <br></br>With a focus on clean architecture and intuitive design, we make sure your software not only works — but works well for your team and your customers. If you're looking for reliable, purpose-built tech that grows with you, you're in the right place.",
-    route: "/services/enterprise-software-development"
-  },
-  {
-    title: "Web Development",
-    image: cdn('web-development.jpeg'),
-    description: "Your website is often the first impression — we make sure it counts. At Lance, we build fast, responsive, and visually polished websites that don&apos;t just look good, but perform flawlessly across all devices.<br></br>From marketing sites to complex web platforms, our design and development teams work hand-in-hand to craft digital experiences that are both functional and memorable. Whether you need to launch, refresh, or scale, we&apos;ll bring your vision to life with precision and purpose.",
-    route: "/services/web-development"
-  },
   {
     title: "AI & Machine Learning",
     image: cdn('artificial-intelligence.jpg'),
@@ -25,15 +14,28 @@ const services = [
     route: "/services/ai-ml-consulting"
   },
   {
+    title: "Software Development",
+    image: cdn('software-development.webp'),
+    description: "At our core, we craft bespoke software solutions meticulously aligned with your specific business objectives, operational workflows, and user requirements. We tackle diverse challenges, whether that means bringing an innovative product vision to market, engineering a sophisticated custom system for your internal operations, or strategically modernizing your legacy applications using contemporary technologies like Python or Go to unlock new efficiencies.<br></br>Our development philosophy prioritizes robust, clean architecture and highly intuitive user interface design, ensuring your software is both powerful and genuinely easy to use. We build scalable, high performance applications utilizing principles like domain driven design and agile methodologies. You can expect reliable, purpose built technology, for example, secure cloud native applications or data driven platforms, that evolves seamlessly alongside your business growth.",
+    route: "/services/enterprise-software-development"
+  },
+  {
+    title: "Web Development",
+    image: cdn('web-development.jpeg'),
+    description: "Your website is often the first impression, we make sure it counts. At Lance, we build fast, responsive, and visually polished websites that don't just look good, but perform flawlessly across all devices. Our team utilizes leading front end frameworks such as React, Angular, or Vue.js to create visually compelling and highly interactive user interfaces.<br></br>These interfaces are powered by robust backend systems developed with technologies like Node.js or Python, ensuring speed and reliability. From sophisticated ecommerce platforms that drive sales to secure enterprise portals and engaging SaaS product frontends, we focus on flawless responsive design across all devices. We aim for intuitive navigation and user experiences that significantly boost engagement and conversion rates for your business.",
+    route: "/services/web-development"
+  },
+  
+  {
     title: "Mobile Development",
     image: cdn('mobile-development.jpeg'),
-    description: "We build mobile apps that feel native — because they are. Whether you're targeting iOS, Android, or both, we create fast, responsive, and user-friendly apps that deliver real value on the go.<br></br>From concept to launch, we handle the full development lifecycle with a focus on performance, design consistency, and seamless integration with your backend systems. If mobility is key to your product or service, we&apos;ll help you get it right from the start.",
+    description: "In today's mobile first world, having a strong presence on handheld devices is essential for engaging users effectively wherever they are. We specialize in building true native mobile applications for both iOS, using Swift, and Android, using Kotlin. This approach ensures optimal performance, seamless device integration, and a user experience that feels intuitive and perfectly attuned to each platform.<br></br>Our comprehensive mobile development lifecycle covers everything from initial concept and meticulous UI/UX design that reflects your brand, to robust backend API integration for secure real time data exchange. We also manage the complexities of a smooth app store deployment process. The result is a powerful, reliable mobile application that serves as a valuable asset, extending your services and strengthening customer connections on the go.",
     route: "/services/mobile-development"
   },
   {
     title: "ERP Consulting",
     image: cdn('erp-consulting.jpg'),
-    description: "We help businesses streamline operations with the right ERP systems — tailored to fit, not forced to fit. Whether you're implementing from scratch or optimizing an existing setup, our team guides you through every stage with clarity and precision.<br></br>From finance and inventory to HR and CRM, we align your ERP with your workflows to improve efficiency, visibility, and control. If you're ready to simplify complexity and scale smarter, we&apos;re here to make it happen.",
+    description: "Effectively managing your core business operations is fundamental to achieving sustainable growth and maintaining a competitive edge. Our expert ERP consulting services are designed to streamline these complexities. We focus on tailoring and implementing leading Enterprise Resource Planning systems, meticulously configured to unify your most critical business functions, from intricate financial management to dynamic supply chain optimization.<br></br>From finance and inventory to HR and CRM, we align your ERP with your workflows to improve efficiency, visibility, and control. If you're ready to simplify complexity and scale smarter, we're here to make it happen.",
     route: "/services/erp-consulting"
   },
   {
@@ -49,31 +51,26 @@ const services = [
 
 const OurServices = () => {
   const containerRef = useRef(null);
+  const isDesktop = useIsDesktop();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start'],
+    enabled: isDesktop, // Disable on mobile
   });
 
-  // Define useTransform calls individually at the top level
-  const scaleTransform1 = useTransform(
-    scrollYProgress,
-    [0, 1 / services.length],
-    [1, 0.85]
-  );
-  const scaleTransform2 = useTransform(
-    scrollYProgress,
-    [1 / services.length, 2 / services.length],
-    [1, 0.85]
-  );
-  const scaleTransform3 = useTransform(
-    scrollYProgress,
-    [2 / services.length, 3 / services.length],
-    [1, 0.85]
-  );
+  const scaleTransforms = services.map((_, index) => {
+    const sectionHeight = 1 / services.length;
+    const sectionStart = index * sectionHeight;
+    const sectionEnd = sectionStart + sectionHeight;
 
-  // Store transforms in an array for easier access in the map
-  const scaleTransforms = [scaleTransform1, scaleTransform2, scaleTransform3];
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return useTransform(
+      scrollYProgress,
+      [sectionStart, sectionEnd],
+      [1, 0.85]
+    );
+  });
 
   return (
     <div className="p-5">
@@ -83,7 +80,7 @@ const OurServices = () => {
       <div className="flex flex-col md:flex-row justify-between gap-6 ">
         <h2 className="text-lg mt-10 mb-5 md:mt-0 md:mb-0 text-center md:text-left md:text-xl flex-shrink-0">Our Services</h2>
         <h5 className="text-3xl p-2 md:p-0 text-center md:text-justify md:text-4xl w-full md:w-[65%] leading-tight md:leading-[1.1] ">
-        From strategy to execution, we deliver end-to-end technology solutions designed to solve real-world business challenges, enhance operational efficiency, and drive sustainable growth.
+        Let's cut to the chase. We do a select few things, and we do them exceptionally well: creating impactful AI solutions, developing custom software, and providing expert cloud engineering, all designed to solve your toughest challenges and drive significant growth.
         </h5>
       </div>
 
@@ -93,27 +90,36 @@ const OurServices = () => {
         className="relative h-fit"
         
       >
-        {services.map((service, index) => (
+        {services.map((service, index) => {
+          // Calculate scroll progress ranges for each item
+          //const sectionHeight = 1 / projects.length;
+          //const sectionStart = index * sectionHeight;
+          // Access the pre-calculated scale transform for this index
+          const scale = scaleTransforms[index];
+
+          return (
             <motion.div
               key={index}
-              className="sticky top-0 w-full origin-center"
+              className={isDesktop ? "sticky top-0 w-full origin-center" : "w-full origin-center"}
               style={{
-                scale: scaleTransforms[index],
+                scale: isDesktop ? scale : 1,
                 zIndex: index,
               }}
             >
-              <div className="h-fit w-full flex items-center justify-center">
+              {/* Container to center content within the full-screen sticky area */}
+              <div className="h-fit w-full flex flex-col md:flex-row items-center justify-center">
                 <Service
                   number={`0${index + 1}`}
                   title={service.title}
                   description={service.description}
+                  dangerousHTML={true}
                   route={service.route}
-                  dangerousHTML={true} // Assuming this prop exists and is needed
                   imageUrl={service.image}
                 />
               </div>
             </motion.div>
-        ))}
+          );
+        })}
       </div> {/* End STACKED PINNING CONTAINER */}
 
     </div>

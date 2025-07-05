@@ -34,7 +34,7 @@ const Body = () => {
           
           <Compass className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Architect</h3>
-          <p className="group-hover:text-white/90">We design the system inside and out — from database structure and APIs to user flows and interface wireframes — ensuring it&apos;s robust, scalable, and ready for real-world usage.</p>
+          <p className="group-hover:text-white/90">We design the system inside and out, from database structure and APIs to user flows and interface wireframes, always ensuring it's robust, scalable, and ready for real-world usage.</p>
         </div>
       </div>
 
@@ -43,14 +43,14 @@ const Body = () => {
           
           <Layers className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Develop</h3>
-          <p className="group-hover:text-white/90">We build your product using clean, modular code and proven frameworks. Our agile approach means fast iterations, constant communication, and full transparency throughout the process.</p>
+          <p className="group-hover:text-white/90">We build your product using clean, modular code and proven frameworks. Our agile approach means fast iterations, constant communication, and transparency throughout the process.</p>
         </div>
 
         <div className="p-5 lg:w-1/2 border border-stone-200 rounded-xl bg-stone-100 flex flex-col gap-5 group hover:bg-stone-900 hover:border-stone-900">
           
           <Target className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Deploy & Evolve</h3>
-          <p className="group-hover:text-white/90">Once launched, we monitor, test, and refine the system based on real usage. We stay on to scale, optimize, and adapt the software as your needs and business grow.</p>
+          <p className="group-hover:text-white/90">Once launched, we monitor, test, and refine the system based on real usage. We stay on to scale, and adapt the software as your needs and business grow.</p>
         </div>
       </div>
     </div>
@@ -61,11 +61,12 @@ const Body = () => {
         <div className="lg:w-1/2 w-full flex flex-col gap-10 p-5">
         <h4 className="text-4xl text-black">What We Do</h4>
         <h5 className="text-xl text-left">
-        We don&apos;t just build software — we build the backbone of your business. Whether you&apos;re launching a product, automating internal workflows, or modernizing legacy systems, we craft scalable, high-performance solutions that are tailored to your exact needs. No templates. No shortcuts. Just clean, reliable code built to grow with you.
+       We build the software that powers your business, whether you&apos;re launching something new, streamlining operations, or breathing new life into aging systems. Every solution is scalable, high performance, and tailored to fit. It&apos;s clean code, no templates, no shortcuts.
       <br></br><br></br>
-      Our team handles everything — from backend architecture and APIs to frontend interfaces and seamless user experiences. We work fast, stay flexible, and keep you in the loop every step of the way. If you need software that feels like it was made just for you — because it was — let&apos;s build it together.
-      <br></br><br></br>
-      Every project starts with a deep understanding of your goals, your users, and how your business works. We collaborate closely to translate that into software that&apos;s not just functional — but intuitive, efficient, and a joy to use. Whether you&apos;re a startup or an enterprise, we&apos;re here to turn your ideas into rock-solid, production-ready systems.
+     Our team handles it all, backend architecture, APIs, intuitive interfaces, and smooth user experiences. We move fast, stay flexible, and keep you involved at every step.
+
+It all starts with understanding your goals, your users, and how your business really works. Then we turn that insight into software that feels effortless, intuitive, efficient, and built to last. We&apos;re here to bring your ideas to life.
+
       </h5>
         </div>
         <div className="rounded-2xl h-fit w-full lg:w-1/2 bg-cover bg-center bg-no-repeat" ref={terminalRef}>
@@ -138,7 +139,7 @@ const Body = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 lg:pt-0 lg:text-xl flex-shrink-0 text-center lg:text-left">The Principles Behind Every Line of Code</h2>
         <h5 className="text-3xl text-center lg:text-justify lg:text-4xl w-full lg:w-[65%] leading-tight lg:leading-[1.1] ">
-        Great software isn&apos;t just built — it&apos;s engineered with care, clarity, and purpose. From planning to deployment, we follow principles that prioritize performance, maintainability, and long-term impact, ensuring every product we deliver stands the test of scale and time.
+        Great software isn&apos;t just built, it's engineered with care, and purpose. We follow principles that prioritize performance, maintainability, and long-term impact, ensuring every product we deliver stands the test of scale and time.
         </h5>
       </div>
       <div className="flex flex-col lg:flex-row gap-10 items-stretch justify-center">
@@ -152,7 +153,7 @@ const Body = () => {
       Engineering with Purpose
     </h5>
     <p className="text-sm text-black/65 text-left">
-      We don&apos;t just ship code — we solve problems. Every decision we make is grounded in performance, usability, and long-term value. It&apos;s software that works now and scales later.
+      Great software isn&apos;t just built, it&apos;s engineered with care, and purpose. We follow principles that prioritize performance, maintainability, and long-term impact, ensuring every product we deliver stands the test of scale and time.
     </p>
   </div>
 </div>
@@ -182,7 +183,7 @@ const Body = () => {
       Solutions, Not Shortcuts
     </h5>
     <p className="text-sm text-black/65 text-left">
-      Off-the-shelf isn&apos;t our style. We tailor every line of code to your exact needs, ensuring the final product fits your business — not the other way around.
+      Off-the-shelf isn&apos;t our style. We tailor every line of code to your exact needs, ensuring the final product fits your business not the other way around.
     </p>
   </div>
 </div>

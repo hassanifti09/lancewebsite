@@ -6,7 +6,8 @@ const PreMain = () => {
         <div className="flex flex-col md:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 md:pt-0 md:text-xl flex-shrink-0 text-center md:text-left">Crafting Web Experiences That <br></br>Inspire & Convert</h2>
         <h5 className="text-3xl text-center md:text-justify md:text-4xl w-full md:w-[65%] leading-tight md:leading-[1.1] ">
-        We design and develop beautiful, functional websites that captivate your audience — custom-built to your vision, not generic templates. Whether it&apos;s launching your brand online, building an e-commerce powerhouse, or creating engaging web applications, we turn ideas into seamless, high-performing digital platforms that drive real results.
+        We design and develop beautiful, functional websites that captivate your audience. They are custom-built to your vision. Whether it's launching your brand online, building an e-commerce powerhouse, or creating engaging web applications, we turn ideas into seamless, high-performing digital platforms that drive real results.
+
         </h5>
       </div>
     </div>

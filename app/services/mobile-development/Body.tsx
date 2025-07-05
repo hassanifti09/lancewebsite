@@ -57,11 +57,13 @@ const Body = () => {
         <div className="lg:w-1/2 w-full flex flex-col gap-10 p-5">
         <h4 className="text-4xl text-white">What We Do</h4>
         <h5 className="text-xl text-left">
-        We don&apos;t just build apps – we craft transformative mobile experiences. Whether you need a native iOS or Android app, a versatile cross-platform solution, or want to revitalize an existing mobile presence, we tailor our development to your unique vision and audience. No cookie-cutter apps. Just innovative, user-centric mobile solutions built to elevate your brand.
+        We craft transformative mobile experiences by developing innovative, user-centric solutions tailored to your unique vision. Our work begins with a profound understanding of your target users, market positioning, and growth ambitions. We build custom applications for native iOS, Android, and cross-platform needs that are designed to elevate your brand.
       <br></br><br></br>
-      Our expert mobile strategists, designers, and developers guide you through the entire app lifecycle – from initial ideation and market research to UI/UX design, robust development, rigorous testing, and successful app store launch. We work as your dedicated mobile partner, ensuring transparency and alignment with your business objectives. If you need an app that captivates users, drives engagement, and delivers measurable results – because it&apos;s engineered to – let&apos;s build that digital future together.
+      Our expert team of strategists, designers, and developers manages the complete app lifecycle. This comprehensive process includes initial ideation, market research, UI/UX design, robust development, rigorous testing, and a successful app store launch. As your dedicated mobile partner, we ensure full transparency and alignment with your core business objectives throughout the engagement.
+
       <br></br><br></br>
-      Every mobile app project begins with a profound understanding of your target users, your market positioning, and your growth ambitions. We collaborate closely to translate these insights into a mobile application that&apos;s not just technologically sound – but also intuitive, scalable, and a catalyst for expanding your reach and impact. Whether you&apos;re a startup aiming to disrupt or an enterprise seeking to innovate, we&apos;re here to help you harness the full potential of mobile technology.
+      We translate these strategic insights into a mobile application that is technologically sound, intuitive to use, and highly scalable. The final product is a powerful tool engineered to captivate users, drive engagement, and deliver measurable results, helping you harness the full potential of mobile technology to expand your reach and impact.
+
       </h5>
         </div>
         <div className="hidden lg:block relative h-[400px] w-full lg:w-1/2  rounded-xl">
@@ -75,7 +77,7 @@ const Body = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 lg:pt-0 lg:text-xl flex-shrink-0 text-center lg:text-left">The Principles Powering Our Mobile Innovation</h2>
         <h5 className="text-3xl text-center lg:text-justify lg:text-4xl w-full lg:w-[65%] leading-tight lg:leading-[1.1] ">
-        Exceptional mobile apps aren&apos;t just coded – they&apos;re strategically designed with user empathy, cutting-edge technology, and a clear vision for market success. From concept to launch and beyond, we follow principles that prioritize user engagement, technical excellence, and sustainable app growth.
+        We strategically design exceptional mobile apps by blending user empathy with cutting-edge technology to realize a clear vision for market success. Our guiding principles apply throughout the entire app lifecycle, prioritizing deep user engagement and technical excellence to ensure sustainable app growth and a lasting impact.
         </h5>
       </div>
       <div className="flex flex-col lg:flex-row gap-10 items-stretch justify-center">

@@ -144,7 +144,7 @@ const Footer = () => {
             <div className="flex flex-row mb-10 md:mb-0 gap-5 text-md text-stone-600"> {/* Original structure/style */}
               {/* Using original h5 tags for consistency with provided code */}
               <h5>info@lancesystems.com</h5>
-              <h5>+1 (754) 224 5368</h5>
+              <h5>+1 650-660-9812</h5>
             </div>
           </div>
           <div className="flex gap-5 justify-end md:w-[60%] flex-row"> {/* Original structure/style */}

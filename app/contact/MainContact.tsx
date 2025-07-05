@@ -72,7 +72,7 @@ United States</p>
               </div>
               <div>
                 <p className="text-lg font-light text-gray-900">Phone</p>
-                <p className="text-gray-700">+1 (754) 224-5368</p>
+                <p className="text-gray-700">+1 650-660-9812</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">

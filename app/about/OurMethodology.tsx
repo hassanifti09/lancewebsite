@@ -21,7 +21,7 @@ const OurMethodology = () => {
           
           <Compass className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Design</h3>
-          <p className="group-hover:text-white/90">We translate your goals into clear, intuitive designs that focus on usability, brand alignment, and delivering a seamless user experience.</p>
+          <p className="group-hover:text-white/90">Design isn&apos;t just a functional necessity, it is an art form. Your goals if intuitive, require expressive designs that honor usability and elevate the user experience.</p>
         </div>
       </div>
 

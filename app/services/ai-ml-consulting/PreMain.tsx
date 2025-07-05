@@ -6,7 +6,11 @@ const PreMain = () => {
         <div className="flex flex-col md:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 md:pt-0 md:text-xl flex-shrink-0 text-center md:text-left">Leveraging AI & ML That<br></br>Powers Your Business Edge</h2>
         <h5 className="text-3xl text-center md:text-justify md:text-4xl w-full md:w-[65%] leading-tight md:leading-[1.1] ">
-        We develop AI solutions that feel transformative — built from your data, for your specific challenges, not one-size-fits-all models. Whether it&apos;s unlocking predictive insights or enabling intelligent automation, we turn complex data into clear, actionable strategies that drive significant competitive advantage.
+        We develop transformative AI solutions by using your own data to address your specific challenges. Our process unlocks predictive insights and enables intelligent automation, translating complex data into clear, actionable strategies that drive a significant competitive advantage.
+
+
+
+
         </h5>
       </div>
     </div>

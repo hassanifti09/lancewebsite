@@ -49,7 +49,8 @@ const Body = () => {
           
           <Repeat className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Optimize & Secure</h3>
-          <p className="group-hover:text-white/90">Post-deployment, we continuously monitor performance, security, and costs. We implement best practices for cloud governance, optimize resource utilization, and proactively address vulnerabilities to ensure a resilient and efficient environment.</p>
+          <p className="group-hover:text-white/90">Once your systems are live, we continuously monitor performance, security, cost efficiency, and compliance. By enforcing cloud governance best practices and actively optimizing resources, we create an environment that’s secure, and resilient.
+</p>
         </div>
       </div>
     </div>

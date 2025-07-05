@@ -26,14 +26,15 @@ const Body = () => {
           
           <Brain className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Discover & Strategize</h3>
-          <p className="group-hover:text-white/90">We dive deep into your business objectives, data landscape, and user needs to identify high-impact AI opportunities. This includes defining clear success metrics, potential models, and data strategies aligned with your goals.</p>
+          <p className="group-hover:text-white/90">We dive deep into your business, users, and workflows to define exactly what the software needs to do, and why. This includes mapping out architecture, and tech stacks aligned with your goals.</p>
         </div>
 
         <div className="p-5 lg:w-1/2 border border-stone-200 rounded-xl bg-stone-100 flex flex-col gap-5 group hover:bg-stone-900 hover:border-stone-900">
           
           <Network className="h-8 w-8 group-hover:text-white/90 text-stone-700" />
           <h3 className="text-2xl group-hover:text-white/90 font-medium">Model & Validate</h3>
-          <p className="group-hover:text-white/90">We select and develop appropriate AI/ML models, from proof-of-concept to rigorous validation. This involves feature engineering, algorithm selection, and iterative testing to ensure accuracy, fairness, and robustness for real-world application.</p>
+          <p className="group-hover:text-white/90">We manage the entire lifecycle for selecting and developing appropriate AI/ML models, including initial proof-of-concept and rigorous validation. Our process involves feature engineering, algorithm selection, and iterative testing to build accurate, fair, and robust models for real-world application.
+</p>
         </div>
       </div>
 
@@ -60,11 +61,13 @@ const Body = () => {
         <div className="lg:w-1/2 w-full flex flex-col gap-10 p-5">
         <h4 className="text-4xl text-white">What We Do</h4>
         <h5 className="text-xl text-left">
-        We don&apos;t just analyze data — we unlock its strategic value for your business. Whether you&apos;re seeking predictive insights, intelligent automation, or innovative AI-driven products, we craft bespoke AI/ML solutions tailored to your unique challenges and opportunities. No generic models. No black boxes. Just transparent, impactful AI built to drive your growth.
+        We unlock the strategic value of your data by crafting bespoke AI/ML solutions tailored to your unique challenges and opportunities. Our work provides predictive insights, enables intelligent automation, and creates innovative AI-driven products that deliver a decisive competitive advantage.
+
       <br></br><br></br>
-      Our expert team handles the full AI lifecycle — from data strategy and model development to deployment and operationalization. We work collaboratively, stay agile, and maintain full transparency throughout the engagement. If you need AI that truly understands and transforms your business — because it&apos;s designed to — let&apos;s innovate together.
+      Our expert team manages the complete AI lifecycle, covering data strategy, model development, deployment, and operationalization. We begin each engagement with a thorough understanding of your strategic objectives, partnering with you through a collaborative, agile, and transparent process to achieve your goals.
       <br></br><br></br>
-      Every engagement begins with a thorough understanding of your strategic objectives, data assets, and operational context. We partner closely with you to translate these insights into AI solutions that are not just powerful — but also practical, ethical, and seamlessly integrated. Whether you&apos;re starting your AI journey or scaling advanced initiatives, we&apos;re here to turn your data into decisive advantages.
+      This partnership approach results in practical, ethical, and seamlessly integrated AI solutions. We build transparent and impactful systems designed to be powerful tools that drive your sustainable growth.
+
       </h5>
         </div>
         <div className="hidden lg:block relative h-[400px] w-full lg:w-1/2  rounded-xl" >
@@ -78,7 +81,8 @@ const Body = () => {
         <div className="flex flex-col lg:flex-row justify-between gap-6 ">
         <h2 className="text-lg pt-8 lg:pt-0 lg:text-xl flex-shrink-0 text-center lg:text-left">The Principles Guiding Our AI/ML Expertise</h2>
         <h5 className="text-3xl text-center lg:text-justify lg:text-4xl w-full lg:w-[65%] leading-tight lg:leading-[1.1] ">
-        Powerful AI isn&apos;t just developed — it&apos;s cultivated with insight, rigor, and responsibility. From strategy to deployment, we follow principles that prioritize accuracy, ethical considerations, and sustainable value, ensuring every solution we deliver drives meaningful and lasting impact.
+        We create powerful AI with insight, rigor, and a strong sense of responsibility. Our principles guide the entire development lifecycle, prioritizing accuracy and ethical considerations to create solutions that provide sustainable value. We ensure every solution we deliver drives meaningful and lasting impact.
+
         </h5>
       </div>
       <div className="flex flex-col lg:flex-row gap-10 items-stretch justify-center">
@@ -92,7 +96,8 @@ const Body = () => {
       Insight-Driven Strategy
     </h5>
     <p className="text-sm text-black/65 text-left">
-      We don&apos;t just build models — we solve critical business challenges. Every solution is grounded in deep data understanding, targeted to deliver actionable insights and measurable ROI. It&apos;s AI that provides clarity now and competitive advantage later.
+      We solve critical business challenges by developing targeted AI solutions grounded in a deep understanding of your data. Our approach is designed to deliver actionable insights and a measurable ROI, providing your business with immediate clarity and a lasting competitive advantage.
+
     </p>
   </div>
 </div>
