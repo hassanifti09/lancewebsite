@@ -1,7 +1,15 @@
 import React from 'react';
 import Button from '../components/Button'; // Added import
+import toast from 'react-hot-toast';
 
 const MainContact = () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real application, you would send the form data to your backend here.
+    // For this example, we'll just show a toast.
+    toast.success('Submitted');
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -11,7 +19,7 @@ const MainContact = () => {
           <p className="text-stone-500 text-sm lg:text-md font-light">
             Get your personalized estimate in just a few clicks — it&apos;s fast, easy, and completely free
           </p>
-          <form action="#" method="POST" className="flex flex-col gap-2 lg:gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2 lg:gap-4">
             <input
               type="text"
               name="first-name"
@@ -44,7 +52,7 @@ const MainContact = () => {
               className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-400 transition-colors"
               defaultValue={''}
             />
-            <Button route="#" variant="black" text="Submit" icon />
+            <Button type="submit" variant="black" text="Submit" icon />
           </form>
         </div>
 

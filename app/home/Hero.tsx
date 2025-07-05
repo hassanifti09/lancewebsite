@@ -8,6 +8,7 @@ import Button from '../components/Button'; // Keep import for OTHER buttons
 import BasicVideo from '../components/BasicVideo';
 import Noise from '../components/Noise';
 import { cdn } from '@/lib/cdn';
+import toast from 'react-hot-toast';
 
 // --- RECREATED Services Data ---
 const services = [
@@ -126,6 +127,11 @@ const Hero = () => {
       NiceModal.show(heroModalId);
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success('Submitted');
+  };
+
   // --- Original Hero JSX Structure ---
   // Uses standard <button> for "Services" with CORRECT styles
   return (
@@ -180,7 +186,7 @@ const Hero = () => {
             <p className="text-stone-500 text-sm lg:text-md font-light">
               Get your personalized estimate in just a few clicks, it&apos;s fast, easy, and completely free
             </p>
-            <form className="flex flex-col gap-2 lg:gap-4">
+            <form className="flex flex-col gap-2 lg:gap-4" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="First name"
@@ -201,7 +207,7 @@ const Hero = () => {
                 placeholder="Message"
                 className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:border-gray-400 transition-colors"
               />
-              <Button variant="black" route="/" text="Get an Estimate" icon />
+              <Button variant="black" type="submit" text="Get an Estimate" icon />
             </form>
           </div>
         </div>

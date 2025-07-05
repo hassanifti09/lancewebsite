@@ -34,6 +34,8 @@ export const viewport = {
   themeColor: '#000000',
 };
 
+import { Toaster } from 'react-hot-toast';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,6 +67,15 @@ export default function RootLayout({
         <Providers>
           <PreHeader />
           {children}
+          <Toaster
+            position="bottom-right"
+            toastOptions={{
+              style: {
+                padding: '16px',
+                fontSize: '1.1rem',
+              },
+            }}
+          />
         </Providers>
       </body>
     </html>
