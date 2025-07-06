@@ -14,7 +14,7 @@ const Main = () => {
             By intelligently navigating the complex web of payer regulations and coding requirements, these platforms empower healthcare providers to achieve greater financial stability and operational efficiency, allowing them to focus more on patient care.
           </h5>
         </div>
-        <div className="rounded-2xl w-full md:w-1/2 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${cdn('medical.jpg')}')` }}></div>
+        <div className="rounded-2xl w-full md:w-1/2 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url('${cdn('aibill1.jpeg')}')` }}></div>
       </div>
     </div>
   );

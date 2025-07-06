@@ -1,19 +1,19 @@
 'use client';
 import React from 'react';
 import DarkHeader from '@/app/components/DarkHeader';
-import BasicVideo from '@/app/components/BasicVideo';
 import { cdn } from '@/lib/cdn';
 
 const Hero = () => {
   return (
     <div className="relative m-5 rounded-2xl overflow-hidden h-[55vh] md:h-[75vh]">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <BasicVideo
-          src={cdn('blackhole.m4v')}
-          poster={cdn('fallback.png')}
+        <img
+          src={cdn('osdcorb.jpeg')}
+          alt="Predictamaint Hero"
           className="object-cover w-full h-full"
           style={{ transform: 'scale(1.35)' }}
         />
+        <div className="absolute inset-0 bg-black opacity-20"></div>
       </div>
       <div className="relative h-full z-10 flex flex-col justify-between p-5">
         <DarkHeader />

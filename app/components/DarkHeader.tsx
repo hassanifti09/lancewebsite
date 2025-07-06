@@ -4,87 +4,8 @@ import React, { useState, useEffect } from 'react'
 import Button from './Button'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link';
-import NiceModal, { useModal } from '@ebay/nice-modal-react';
 import { createPortal } from "react-dom"
 import { cdn } from '@/lib/cdn'
-
-// Services Modal Component
-const ServicesModal = NiceModal.create(() => {
-  const modal = useModal();
-  // Services data
-  const services = [
-    { title: 'Cloud Consulting', path: '/services/cloud-consulting', image: cdn('cloud-consulting.webp') },
-    { title: 'Software Development', path: '/services/enterprise-software-development', image: cdn('software-development.webp') },
-    { title: 'Web Development', path: '/services/web-development', image: cdn('web-development.jpeg') },
-    { title: 'AI & ML Consulting', path: '/services/ai-ml-consulting', image: cdn('artificial-intelligence.jpg') },
-    { title: 'Mobile Development', path: '/services/mobile-development', image: cdn('mobile-development.jpeg') },
-    { title: 'ERP Consulting', path: '/services/erp-consulting', image: cdn('erp-consulting.jpg') },
-  ];
-  useEffect(() => {
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('modal-open');
-    return () => {
-      document.body.style.overflow = originalOverflow;
-      document.body.classList.remove('modal-open');
-    }
-  }, []);
-  return (
-    <div 
-      className={`fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col items-center justify-center p-8 ${modal.visible ? 'opacity-100' : 'opacity-0'}`}
-      onClick={() => modal.hide()}
-      style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch', height: '100vh' }}
-    >
-      {/* Close button */}
-      <button 
-        onClick={() => modal.hide()} 
-        className="absolute top-8 right-8 text-white p-2 hover:text-white/80 z-10"
-      >
-        <X size={32} />
-      </button>
-      {/* Services Grid */}
-      <div 
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full"
-        onClick={(e) => e.stopPropagation()}
-        style={{ overflowY: 'auto', WebkitOverflowScrolling: 'touch' }}
-      >
-        {services.map((service, index) => (
-          <Link 
-            href={service.path} 
-            key={index}
-            className="group"
-            prefetch={true}
-            style={{ viewTransitionName: 'service-card' }}
-            onClick={(e) => {
-              e.preventDefault();
-              if (typeof document.startViewTransition === 'function') {
-                document.startViewTransition(() => {
-                  modal.hide();
-                  window.location.href = service.path;
-                });
-              } else {
-                modal.hide();
-                window.location.href = service.path;
-              }
-            }}
-          >
-            <div className="flex flex-col gap-6 transition-all duration-300 group-hover:scale-105">
-              <div className="aspect-video relative overflow-hidden rounded-xl shadow-lg bg-black">
-                <Image 
-                  src={service.image} 
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-all duration-500 group-hover:scale-110 opacity-80"
-                />
-              </div>
-              <h3 className="text-xl font-medium text-white text-center">{service.title}</h3>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
-});
 
 const DarkHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -125,12 +46,7 @@ const DarkHeader = () => {
                 <Link href="/about#our-values" className="block px-4 py-2 text-black cursor-pointer">Our Values</Link>
               </div>
             </div>
-            <div 
-              className="cursor-pointer hover:text-black/80"
-              onClick={() => NiceModal.show(ServicesModal)}
-            >
-              Services
-            </div>
+            <Link href="/#services" className="hover:text-black/80">Services</Link>
             <Link href="/#projects" className="hover:text-black/80">Projects</Link>  
           </div>
         </div>
@@ -162,18 +78,7 @@ const DarkHeader = () => {
           <div className="h-full flex flex-col items-center justify-center space-y-8 text-black font-light">
             <Link href="/" className="text-3xl hover:text-black/80">Home</Link>
             <Link href="/about" className="text-3xl hover:text-black/80">About</Link>
-            <div 
-              className="text-3xl hover:text-black/80 cursor-pointer"
-              onClick={() => {
-                setIsMenuOpen(false);
-                setTimeout(() => {
-                  document.body.style.overflow = 'unset';
-                  NiceModal.show(ServicesModal);
-                }, 300);
-              }}
-            >
-              Services
-            </div>
+            <Link href="/#services" className="text-3xl hover:text-black/80">Services</Link>
             <Link href="/#projects" className="text-3xl hover:text-black/80">Projects</Link>
             <div className="pt-8">
               <Button variant="black" route="/contact" text="Contact"/>

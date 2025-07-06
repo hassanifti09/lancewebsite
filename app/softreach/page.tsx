@@ -2,6 +2,7 @@ import Hero from './Hero';
 import Main from './Main';
 import Values from './Values';
 import HowToApply from './HowToApply';
+import Footer from '../components/Footer';
 
 const SoftReachPage = () => {
   return (
@@ -10,6 +11,7 @@ const SoftReachPage = () => {
       <Main />
       <Values />
       <HowToApply />
+      <Footer />
     </div>
   );
 };

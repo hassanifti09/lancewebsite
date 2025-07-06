@@ -14,7 +14,7 @@ const projects = [
     title: 'Predictamaint',
     description:
       "OSDCORB Tyres, a leading tyre manufacturer, faced significant unplanned equipment downtime, leading to production halts and increased costs. Their traditional reactive maintenance approach was inefficient and unsustainable.\n\nWe implemented an AI-powered predictive maintenance system that analyzes real-time data to forecast equipment failures. This solution enables proactive maintenance, minimizing disruptions and optimizing operational efficiency for OSDCORB Tyres.",
-    imageUrl: cdn('grad1.jpg'), // Placeholder, ideally a specific image for Predictamaint
+    imageUrl: cdn('osdcorb.jpeg'), // Placeholder, ideally a specific image for Predictamaint
     technologies: [{ text: 'AI', variant: 'white' },
       { text: 'Machine Learning', variant: 'black' },
       { text: 'IoT', variant: 'white' },
@@ -26,7 +26,7 @@ const projects = [
     title: 'Integra',
     description:
       'Integra, a global management consulting firm, struggled with fragmented data and inefficient workflows due to a patchwork of legacy systems. This hindered their ability to service diverse international clients and manage seamless collaboration.\n\nWe developed a bespoke, cloud-native platform that unified their global operations, replacing disparate CRM and project management tools. This integrated solution provides a panoramic view of client interactions and resource allocations, enhancing agility and collaboration.',
-    imageUrl: cdn('grad1.jpg'), // Placeholder, ideally a specific image for Integra
+    imageUrl: cdn('Integra.jpeg'), // Placeholder, ideally a specific image for Integra
     technologies: [{ text: 'Cloud', variant: 'white' },
       { text: 'Custom Software', variant: 'black' },
       { text: 'CRM', variant: 'white' },
@@ -38,7 +38,7 @@ const projects = [
     title: 'Momentum Logistics',
     description:
       'Momentum Logistics, a leader in temperature-controlled pharmaceutical transport, faced the critical challenge of maintaining cold chain integrity and providing verifiable, real-time proof to clients and regulators. Zero margin for error meant any deviation could compromise product integrity and patient health.\n\nWe co-created an IoT-integrated platform that provides continuous, real-time monitoring of critical data points like temperature and humidity. This solution enhances transparency, streamlines regulatory compliance, and optimizes operational efficiency, solidifying Momentum Logistics\' position as an industry leader.',
-    imageUrl: cdn('grad1.jpg'), // Placeholder, ideally a specific image for Momentum Logistics
+    imageUrl: cdn('momentum.jpeg'), // Placeholder, ideally a specific image for Momentum Logistics
     technologies: [{ text: 'IoT', variant: 'white' },
       { text: 'Real-time Monitoring', variant: 'black' },
       { text: 'Supply Chain', variant: 'white' },
